@@ -1,0 +1,80 @@
+
+   body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #8ec5fc, #f093fb, #f093fb) fixed;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h3 {
+    margin: 10px 0;
+  }
+  
+  h4 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.5);
+    background: linear-gradient(45deg, #ff420e, #f2571a);
+  }
+  h2{
+    background: linear-gradient(45deg, #4a86e8, #50c4f5);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(0, 0, 0, 0.1),
+    0 0 40px rgba(0, 0, 0, 0.1),
+    0 0 80px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"],
+  button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 200px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #submit {
+    width: 25%;
+    height: 35%;
+  }
+  
+  #viewport {
+    width: device-width;
+  }
+  
+  /* Additional color styles */
+  h1 {
+    color: blue;
+  }
+  
+  h3 {
+    color: green;
+  }
+  
+  input[type="text"] {
+    color: purple;
+  }
+  
+  button {
+    color: yellow;
+  }
+  
