@@ -4,7 +4,7 @@ document.getElementById("submit").addEventListener("click", async()=>{
     let y=document.getElementById("num2").value;
     let c=document.getElementById("num3").value;
     if(p===""||x===""||y===""||c===""){
-        alert("Please enter all the values")
+        alert("Please enter all the values :(")
         window.location.reload();
     }
     else if(parseFloat(c)===100){
