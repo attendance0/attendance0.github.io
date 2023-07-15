@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta id="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Calc</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta id="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attendance Calc</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <h1>Attendance Calculator</h1>
     <h3>0-Monday</h3>
-    <h3>1-Sunday</h3>
-    <h3>2-Tuesday</h3>
-    <h3>3-Wednesday</h3>
-    <h3>4-Thursday</h3>
-    <h3>5-Friday</h3>
-    <h3>6-Saturday</h3>
+    <h3>1-Tuesday</h3>
+    <h3>2-Wednesday</h3>
+    <h3>3-Thursday</h3>
+    <h3>4-Friday</h3>
+    <h3>5-Saturday</h3>
     <h3>For 2 Sem, Periods / day =>[5,5,6,4,4,4]</h3>
-    <input type="text" id="num4" placeholder="Today's day">
-    <input type="text" id="num1" placeholder="Attended classes">
-    <input type="text" id="num2" placeholder="Total classes">
-    <input type="text" id="num3" placeholder="Target attendance">
+    <h3 id="note">Assuming u want to calculate it from todays starting [Must enter previous day info]</h3>
+    <input type="text" id="num4" placeholder="Today's day (From above)">
+    <input type="text" id="num1" placeholder="Attended classes (Yesterdays classes)">
+    <input type="text" id="num2" placeholder="Total classes (Yesterdays total)">
+    <input type="text" id="num3" placeholder="Target attendance ">
+    <input type="text" id="num5" placeholder="Absent day (From above) (optional)">
     <button type="submit" id="submit">calculate</button>
-    <footer>Version 1.1</footer>
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    
+    
+    <footer id="footer">Version 2.0</footer>
     <script src="./index.js"></script>
     
 </body>
