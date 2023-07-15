@@ -19,7 +19,7 @@
     background: linear-gradient(45deg, #ff420e, #f2571a);
   }
   h2{
-    background: linear-gradient(45deg, #4a86e8, #50c4f5);
+    background: linear-gradient(45deg, #0b7508, #50c4f5);
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -63,7 +63,18 @@
   
   /* Additional color styles */
   h1 {
-    color: blue;
+    background: linear-gradient(45deg, #557127, #71067d);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(0, 0, 0, 0.1),
+    0 0 40px rgba(0, 0, 0, 0.1),
+    0 0 80px rgba(0, 0, 0, 0.1);
   }
   
   h3 {
@@ -76,5 +87,12 @@
   
   button {
     color: yellow;
+  }
+  #note{
+    color: red;
+    text-align: center;
+  }
+  #footer{
+    text-align: right;
   }
   
