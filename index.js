@@ -27,8 +27,10 @@ document.getElementById("submit").addEventListener("click", async()=>{
     let arr=[5,5,6,4,4,4];
     let atten=[],nr=[],dr=[],ai=0
     var cr=(x/y)*100;
-    cr = cr.toFixed(2);
-    let h=Math.abs(parseFloat(ab)-p);
+    cr = cr.toFixed(2)
+    let h;
+    (parseFloat(ab)-p>=0)?(h=parseFloat(ab)-p):(h=6-Math.abs(parseFloat(ab)-p));
+    console.log(h)
     while(1){
         if(((x/y)*100)>c) break;
         if(p>5) p=0;
