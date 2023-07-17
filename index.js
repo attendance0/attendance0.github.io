@@ -13,8 +13,9 @@ document.getElementById("submit").addEventListener("click", async()=>{
         const newH2 = await document.createElement('h2')
         newH2.innerText = `You can never reach 100% attendance`
         document.body.appendChild(newH2)
-
+        
         document.getElementById("submit").addEventListener("click", async()=>{
+            alert("you can never reach 100% attendance 🥶")
             window.location.reload();
         })
     }
