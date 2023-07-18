@@ -13,8 +13,9 @@ document.getElementById("submit").addEventListener("click", async()=>{
         const newH2 = await document.createElement('h2')
         newH2.innerText = `You can never reach 100% attendance`
         document.body.appendChild(newH2)
-
+        
         document.getElementById("submit").addEventListener("click", async()=>{
+            alert("you can never reach 100% attendance 🥶")
             window.location.reload();
         })
     }
@@ -23,8 +24,10 @@ document.getElementById("submit").addEventListener("click", async()=>{
     x=parseFloat(x);
     y=parseFloat(y);
     c=parseFloat(c);
-    let s=0;
+    let s=0,p1=p+1,fx=x,fy=y;
     let arr=[5,5,6,4,4,4];
+    let fp=arr[p]
+    let itr=arr[p1];
     let atten=[],nr=[],dr=[],ai=0
     var cr=(x/y)*100;
     cr = cr.toFixed(2)
@@ -85,15 +88,35 @@ new Chart("myChart", {
     },
     
   });
-    ai=0,day=1
+    ai=0,day=1;
     while(ai<atten.length){
 
         const newH3 = await document.createElement('h5')
         if(ai-1>=0) {
-            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌`)
+            let nrt=nr[ai-1],drt=dr[ai-1];
+            let per=[],dper=[]
+            let inc=1;
+            console.log(itr)
+            while(itr--){
+                per.push((((parseInt(nrt)+inc)/(parseInt(drt)+inc))*100).toFixed(2))
+                dper.push((((parseInt(nrt))/(parseInt(drt)+inc))*100).toFixed(2))
+                inc++
+                
+            }
+            p1++;
+            if(p1>5) p1=0;
+            itr=arr[p1];
+            
+            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅------->Per period increase [${per}]`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌------->Per period decrease [${dper}]`)
         }
         else {
-            (atten[ai]-cr>0)?(newH3.innerText = `After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-cr).toFixed(2)}% increase] ✅`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
+            let fper=[];
+            let inc=1;
+            while(fp--){
+                fper.push((((parseInt(fx)+inc)/(parseInt(fy)+inc))*100).toFixed(2));
+                inc++;
+            }
+            (atten[ai]-cr>0)?(newH3.innerText = `After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-cr).toFixed(2)}% increase] ✅------->Per period increase [${fper}]`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
         }
         document.body.appendChild(newH3)
         ai++
