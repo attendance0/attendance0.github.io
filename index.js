@@ -20,11 +20,12 @@ document.getElementById("submit").addEventListener("click", async()=>{
         })
     }
     else{
+    let days=["Mon","Tue","Wed","Thu","Fri","Sat"]
     p=parseFloat(p);
     x=parseFloat(x);
     y=parseFloat(y);
     c=parseFloat(c);
-    let s=0,p1=p+1,fx=x,fy=y;
+    let s=0,p1=p+1,fx=x,fy=y,d=p;
     let arr=[5,5,6,4,4,4];
     let fp=arr[p]
     let itr=arr[p1];
@@ -107,7 +108,7 @@ new Chart("myChart", {
             if(p1>5) p1=0;
             itr=arr[p1];
             
-            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅------->Per period increase [${per}]`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌------->Per period decrease [${dper}]`)
+            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅------->Per period increase [${per}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌------->Per period decrease [${dper}]`)
         }
         else {
             let fper=[];
@@ -116,10 +117,12 @@ new Chart("myChart", {
                 fper.push((((parseInt(fx)+inc)/(parseInt(fy)+inc))*100).toFixed(2));
                 inc++;
             }
-            (atten[ai]-cr>0)?(newH3.innerText = `After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-cr).toFixed(2)}% increase] ✅------->Per period increase [${fper}]`):(newH3.innerText = `After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
+            (atten[ai]-cr>0)?(newH3.innerText = `[${days[d]}] After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(atten[ai]-cr).toFixed(2)}% increase] ✅------->Per period increase [${fper}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
         }
         document.body.appendChild(newH3)
         ai++
+        d++;
+        if(d>5) d=0;
     }
     document.getElementById("submit").addEventListener("click", async()=>{
         window.location.reload();
