@@ -28,13 +28,12 @@ document.getElementById("submit").addEventListener("click", async()=>{
     let s=0,p1=p+1,fx=x,fy=y,d=p;
     let arr=[5,5,6,4,4,4];
     let fp=arr[p]
-    let itr=arr[p1];
+    p>=5?itr=arr[0]:itr=arr[p1];
     let atten=[],nr=[],dr=[],ai=0
     var cr=(x/y)*100;
     cr = cr.toFixed(2)
     let h;
     (parseFloat(ab)-p>=0)?(h=parseFloat(ab)-p):(h=6-Math.abs(parseFloat(ab)-p));
-    console.log(h)
     while(1){
         if(((x/y)*100)>c) break;
         if(p>5) p=0;
@@ -54,7 +53,7 @@ document.getElementById("submit").addEventListener("click", async()=>{
         p++;
         nr[ai]=x;
         dr[ai]=y;
-        console.log("present: "+x+" "+y+" "+p)
+        // console.log("present: "+x+" "+y+" "+p)
         atten[ai++]=((x/y)*100).toFixed(2);
         }
     }
@@ -97,7 +96,7 @@ new Chart("myChart", {
             let nrt=nr[ai-1],drt=dr[ai-1];
             let per=[],dper=[]
             let inc=1;
-            console.log(itr)
+            // console.log("itr :"+itr)
             while(itr--){
                 per.push((((parseInt(nrt)+inc)/(parseInt(drt)+inc))*100).toFixed(2))
                 dper.push((((parseInt(nrt))/(parseInt(drt)+inc))*100).toFixed(2))
