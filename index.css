@@ -38,7 +38,10 @@
     display: block;
     margin: 10px auto;
     padding: 5px;
-    width: 200px;
+    width: 250px;
+    border: none; 
+    border:solid 1.7px #b13eef;
+    border-radius: 10px;
   }
   
   button {
