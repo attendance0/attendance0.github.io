@@ -171,7 +171,7 @@ new Chart("myChart", {
             if(p1>5) p1=0;
             itr=arr[p1];
             
-            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [+${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅--> Per period increase [${per}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [-${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌--> Per period decrease [${dper}]`)
+            (atten[ai]-atten[ai-1]>0)?(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [+${(atten[ai]-atten[ai-1]).toFixed(2)}% increase] ✅-->Per period inc [${per}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [-${(atten[ai-1]-atten[ai]).toFixed(2)}% decrease] ❌-->Per period decr [${dper}]`)
         }
         else {
             let fper=[];
@@ -180,7 +180,7 @@ new Chart("myChart", {
                 fper.push((((parseInt(fx)+inc)/(parseInt(fy)+inc))*100).toFixed(2));
                 inc++;
             }
-            (atten[ai]-cr>0)?(newH3.innerText = `[${days[d]}] After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [+${(atten[ai]-cr).toFixed(2)}% increase] ✅--> Per period increase [${fper}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [-${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
+            (atten[ai]-cr>0)?(newH3.innerText = `[${days[d]}] After ${day++}st day: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [+${(atten[ai]-cr).toFixed(2)}% increase] ✅-->Per period inc [${fper}]`):(newH3.innerText = `[${days[d]}] After ${day++} days: ${atten[ai]}% [${nr[ai]}/${dr[ai]}] [-${(cr-atten[ai]).toFixed(2)}% decrease] ❌`)
         }
         document.body.appendChild(newH3)
         ai++
