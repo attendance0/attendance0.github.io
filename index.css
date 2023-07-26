@@ -42,6 +42,8 @@
     border: none; 
     border:solid 1.7px #b13eef;
     border-radius: 10px;
+
+    
   }
   
   button {
@@ -98,11 +100,12 @@
   #footer{
     text-align: right;
   }
-canvas{
+  canvas{
     margin: 0 auto;
     }
+
 h5{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Anonymous pro";
   background-color: black;
   color:lightgreen;
   padding: 10px;
