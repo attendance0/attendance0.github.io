@@ -38,7 +38,12 @@
     display: block;
     margin: 10px auto;
     padding: 5px;
-    width: 200px;
+    width: 250px;
+    border: none; 
+    border:solid 1.7px #b13eef;
+    border-radius: 10px;
+
+    
   }
   
   button {
@@ -98,4 +103,13 @@
   canvas{
     margin: 0 auto;
     }
+
+h5{
+  font-family: "Anonymous pro";
+  background-color: black;
+  color:lightgreen;
+  padding: 10px;
+  margin: 0;
+
+}
   
