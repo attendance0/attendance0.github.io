@@ -187,8 +187,10 @@ new Chart("myChart", {
         d++;
         if(d>5) d=0;
     }
+    window.scrollBy(0, 700);
     document.getElementById("submit").addEventListener("click", async()=>{
         window.location.reload();
+        window.scrollBy(0, -700);
     })
     
 }
