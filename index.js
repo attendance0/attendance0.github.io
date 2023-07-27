@@ -1,4 +1,14 @@
 document.getElementById("submit").addEventListener("click", async()=>{
+    const elementh2 = document.querySelector("h2");
+    const elementh5 = document.querySelectorAll("h5");
+    const elementh4 = document.querySelector("h4");
+    if(elementh2!=null && elementh5!=null && elementh4!=null){
+    elementh2.remove();
+    elementh5.forEach((elementh5)=>{
+        elementh5.remove();
+    });
+    elementh4.remove();
+    }
     let p=document.getElementById("num4").value;
     let x=document.getElementById("num1").value;
     let y=document.getElementById("num2").value;
@@ -188,10 +198,7 @@ new Chart("myChart", {
         if(d>5) d=0;
     }
     window.scrollBy(0, 700);
-    document.getElementById("submit").addEventListener("click", async()=>{
-        window.location.reload();
-        window.scrollBy(0, -700);
-    })
+    
     
 }
 })
