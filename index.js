@@ -45,7 +45,7 @@ document.getElementById("submit").addEventListener("click", async()=>{
         var s=0;
         let ai=0,atten=[];
         atten[ai++]=catten.toFixed(2);
-        let arr=[5,5,6,4,4,4];
+        let arr=[5,6,5,5,6,6];
         while(1){
             if(((x/y)*100)<=c) break;
             y+=arr[p];
@@ -97,7 +97,7 @@ new Chart("myChart", {
     y=parseFloat(y);
     c=parseFloat(c);
     let s=0,p1=p+1,fx=x,fy=y,d=p;
-    let arr=[5,5,6,4,4,4];
+    let arr=[5,6,5,5,6,6];
     let fp=arr[p]
     p>=5?itr=arr[0]:itr=arr[p1];
     // let itr=arr[p1];
