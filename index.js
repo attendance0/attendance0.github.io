@@ -15,6 +15,8 @@ document.getElementById("submit").addEventListener("click", async()=>{
     let c=document.getElementById("num3").value;
     let ab=document.getElementById("num5").value;
     let td=document.getElementById("num6").value;
+    let sa=document.getElementById("num7").value;
+    sa==="" ? saf=1:saf=0;
     ab==="" ? f=0 : f=1;
     if(p===""||x===""||y===""||c===""){
         alert("Please enter all the values :(")
@@ -31,11 +33,18 @@ document.getElementById("submit").addEventListener("click", async()=>{
         })
     }
     else if(parseFloat(td)===1){
+        sa=parseFloat(sa);
         p=parseFloat(p);
         x=parseFloat(x);
         y=parseFloat(y);
         c=parseFloat(c);
+        let nar=[],z=0
         let catten=(x/y)*100;
+        while(Math.floor(sa)>0){
+            nar[z++]=Math.floor(sa)%10;
+            sa/=10;
+
+        }
         if(catten<=c) {
             alert(`you cant take holidays by setting target as ${c}% attendance and having ${catten.toFixed(2)}% attendance`);
             window.location.reload();
@@ -45,7 +54,9 @@ document.getElementById("submit").addEventListener("click", async()=>{
         var s=0;
         let ai=0,atten=[];
         atten[ai++]=catten.toFixed(2);
-        let arr=[5,6,5,5,6,6];
+        let arr=[]
+        saf ?arr=[5,6,5,5,6,6]: arr=nar.reverse()
+
         while(1){
             if(((x/y)*100)<=c) break;
             y+=arr[p];
@@ -92,15 +103,29 @@ new Chart("myChart", {
     }
     else{
     let days=["Mon","Tue","Wed","Thu","Fri","Sat"]
+    sa=parseInt(sa);
+    console.log("sa:"+typeof(sa) )
     p=parseFloat(p);
     x=parseFloat(x);
     y=parseFloat(y);
     c=parseFloat(c);
+    let nar=[],z=0
+    while(Math.floor(sa)>0){
+        nar[z++]=Math.floor(sa)%10;
+        console.log("sa in loop"+sa)
+        if(z>30) break;
+        sa/=10;
+    
+
+    }
+    
+    console.log(nar)
     let s=0,p1=p+1,fx=x,fy=y,d=p;
-    let arr=[5,6,5,5,6,6];
+    let arr=[];
+    saf ? arr=[5,6,5,5,6,6] : arr=nar.reverse()
+    console.log("arr"+arr);
     let fp=arr[p]
     p>=5?itr=arr[0]:itr=arr[p1];
-    // let itr=arr[p1];
     let atten=[],nr=[],dr=[],ai=0
     let attenGraph=[],agi=0;
     attenGraph[agi++]=((x/y)*100).toFixed(2);
@@ -198,7 +223,6 @@ new Chart("myChart", {
         if(d>5) d=0;
     }
     window.scrollBy(0, 700);
-    
     
 }
 })
