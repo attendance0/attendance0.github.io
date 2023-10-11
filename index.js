@@ -104,7 +104,6 @@ new Chart("myChart", {
     else{
     let days=["Mon","Tue","Wed","Thu","Fri","Sat"]
     sa=parseInt(sa);
-    console.log("sa:"+typeof(sa) )
     p=parseFloat(p);
     x=parseFloat(x);
     y=parseFloat(y);
@@ -112,14 +111,12 @@ new Chart("myChart", {
     let nar=[],z=0
     while(Math.floor(sa)>0){
         nar[z++]=Math.floor(sa)%10;
-        console.log("sa in loop"+sa)
         if(z>30) break;
         sa/=10;
     
 
     }
     
-    console.log(nar)
     let s=0,p1=p+1,fx=x,fy=y,d=p;
     let arr=[];
     saf ? arr=[5,6,5,5,6,6] : arr=nar.reverse()
