@@ -55,7 +55,7 @@ document.getElementById("submit").addEventListener("click", async()=>{
         let ai=0,atten=[];
         atten[ai++]=catten.toFixed(2);
         let arr=[]
-        saf ?arr=[5,6,5,5,6,6]: arr=nar.reverse()
+        saf ?arr=[5,3,6,4,6,5]: arr=nar.reverse()
 
         while(1){
             if(((x/y)*100)<=c) break;
@@ -119,7 +119,7 @@ new Chart("myChart", {
     
     let s=0,p1=p+1,fx=x,fy=y,d=p;
     let arr=[];
-    saf ? arr=[5,6,5,5,6,6] : arr=nar.reverse()
+    saf ? arr=[5,3,6,4,6,5] : arr=nar.reverse()
     console.log("arr"+arr);
     let fp=arr[p]
     p>=5?itr=arr[0]:itr=arr[p1];
